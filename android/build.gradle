@@ -2,14 +2,14 @@ group 'io.carius.lars.ar_flutter_plugin'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.3.50'
+    ext.kotlin_version = '1.7.10'
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:4.1.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -17,7 +17,7 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -37,14 +37,15 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.google.ar:core:1.22.0"
+    implementation "com.google.ar:core:1.41.0"
 
-    implementation 'com.google.ar.sceneform:core:1.15.0'
-    implementation 'com.google.ar.sceneform:assets:1.15.0'
+    implementation 'com.google.ar.sceneform:core:1.17.1'
+    implementation 'com.google.ar.sceneform:assets:1.17.1'
 
+    //noinspection GradleDynamicVersion
     implementation 'com.google.android.gms:play-services-auth:16+'
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 }
 
 afterEvaluate {
